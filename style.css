@@ -19,7 +19,7 @@ body {
   background: var(--white);
   color: var(--black);
   font-family: var(--font);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   letter-spacing: -3%;
   margin: 0 5vw 0 5vw;
@@ -98,7 +98,7 @@ body {
 
 .sb-footer {
   font-size: 0.65rem;
-  opacity: 0.25;
+  opacity: 0.45;
 }
 
 /* ── 메인 ── */
