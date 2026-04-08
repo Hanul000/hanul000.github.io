@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>김한울</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- ───── 사이드바 ───── -->
+      <aside class="sidebar">
+        <div class="sb-top">
+          <p class="sb-name">김한울</p>
+          <p class="sb-email">
+            <a href="mailto:hanulkim000@gmail.com">hanulkim000@gmail.com</a>
+          </p>
+          <span class="sb-desc">
+            서사 기반의 영상 구성과 간단한 모션그래픽을 할 줄 압니다. <br />더
+            배우고 좋은 영상을 만드는데 기여하고 싶습니다.<br /><br />
+            2017~2020 <br />땅도프로덕션 PD <br />
+            <!-- 2023~2024 <br />김의기기념사업회 사무국 간사<br /> -->
+            <span style="color: rgb(255, 0, 0)">✭</span>
+            <span style="color: rgb(0, 255, 0)">✭</span>
+            <span style="color: rgb(0, 0, 255)">✭</span>
+          </span>
+          <!-- <p class="sb-tagline">필요하다면 무엇이든 열심히</p> -->
+
+          <!-- <ul class="filter-list" id="filterList">
+            <li class="active" data-filter="all">전체</li>
+            <li data-filter="기획">기획</li>
+            <li data-filter="촬영">촬영</li>
+            <li data-filter="편집">편집</li>
+            <li data-filter="삽화">삽화</li>
+            <li data-filter="모션그래픽">모션그래픽</li>
+          </ul> -->
+        </div>
+        <p class="sb-footer">© 영상은 모두 제가 아닌 곳에 저작권이 있으니 무단도용을 금합니다.</p>
+      </aside>
+
+      <!-- ───── 메인 ───── -->
+      <main class="main">
+        <div class="content" id="content">
+          <!--
+        카드 추가 가이드
+        ──────────────────────────────────────────
+        세로카드 세트 (.mixed-row):
+          .mixed-left  → 가로카드 2장
+          .mixed-right → 세로카드 1장
+          → 블록 통째로 복붙
+
+        순수 가로카드 (.landscape-grid):
+          .card.landscape 복붙 (짝수로 유지 권장)
+
+        썸네일: .thumb 안 <img src="경로" alt=""> 추가
+        유튜브: data-yt="영상ID" 교체
+        분류:   data-tags="기획,편집" (쉼표 구분)
+        ──────────────────────────────────────────
+      -->
+
+          <!-- 세로카드 세트 1 -->
+          <div class="mixed-row">
+            <div class="mixed-right">
+              <div
+                class="card portrait"
+                data-yt="oqRft8XtZnY?si=1rlu3WJK_BULDQlA"
+                data-title="2025 927기후정의행진 티저"
+                data-tags="기획,편집,모션그래픽"
+              >
+                <div class="thumb">
+                  <img src="img/03-927.png" alt="" />
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags"><span>기획</span><span>편집</span><span>모션그래픽</span></div>
+                  <span class="card-num">01</span>
+                </div>
+              </div>
+            </div>
+            <div class="mixed-left">
+              <div
+                class="card landscape"
+                data-yt="65zRLndX0ys"
+                data-title="2025 대통령선거 민주노동당 권영국 후보 트럭유세영상"
+                data-tags="편집"
+              >
+                <div class="thumb">
+                  <img
+                    src="/img/01-justicep.png"
+                    alt="대통령 선거 민주노동당 권영국 후보 트럭유세영상"
+                  />
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags">
+                    <span>편집</span>
+                  </div>
+                  <span class="card-num">02</span>
+                </div>
+              </div>
+              <div
+                class="card landscape"
+                data-yt="qXwcLrCXyMY"
+                data-title="문화도시상생협의체 현장이슈포럼 인트로"
+                data-tags="기획, 모션그래픽"
+              >
+                <div class="thumb">
+                  <img src="img/04-wonjucommons.png" alt="수원지속가능발전협의회 20주년 기념영상 인트로">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags">
+                    <span>기획</span><span>모션그래픽</span>
+                  </div>
+                  <span class="card-num">03</span>
+                </div>
+              </div>
+            </div>
+            <div class="mixed-left">
+              <div
+                class="card landscape"
+                data-yt="BczeEcRTm6k"
+                data-title="제 56회 수원화성문화제 TVCF"
+                data-tags="기획,편집"
+              >
+                <div class="thumb">
+                  <img src="img/02-hwaseongfest.png">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags">
+                    <span>기획</span><span>편집</span>
+                  </div>
+                  <span class="card-num">04</span>
+                </div>
+              </div>
+              <div
+                class="card landscape"
+                data-yt="MWgrHes8LNI"
+                data-title="i have no hometown"
+                data-tags="기획,촬영,편집"
+              >
+                <div class="thumb">
+                  <img src="img/ihavenohometown.png" alt="i have no hometown">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags"><span>기획</span><span>촬영</span><span>편집</span></div>
+                  <span class="card-num">05</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 세로카드 세트 2 -->
+          <div class="mixed-row">
+            <div class="mixed-left">
+              <div
+                class="card landscape"
+                data-yt="KObqpZ-0DZ4"
+                data-title="수원지속가능발전협의회 20주년 기념영상 인트로"
+                data-tags="기획, 편집"
+              >
+                
+                <div class="thumb">
+                  <img src="img/suwonstd0.png" alt="수원지속가능발전협의회 20주년 기념영상 인트로">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags"><span>기획</span><span>편집</span></div>
+                  <span class="card-num">06</span>
+                </div>
+              </div>
+              <div
+                class="card landscape"
+                data-yt="qEPMUNoocB8"
+                data-title="경기상상플랫폼 GIP"
+                data-tags="기획,모션그래픽"
+              >
+                <div class="thumb">
+                  <img src="img/06-gip.png" alt="경기상상플랫폼 GIP">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags">
+                    <span>기획</span><span>모션그래픽</span>
+                  </div>
+                  <span class="card-num">07</span>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="mixed-left">
+              <div
+                class="card landscape"
+                data-yt="dQw4w9WgXcQ"
+                data-title="작업물 04"
+                data-tags="삽화"
+              >
+                <div class="thumb">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags"><span>삽화</span></div>
+                  <span class="card-num">04</span>
+                </div>
+              </div>
+              <div
+                class="card landscape"
+                data-yt="dQw4w9WgXcQ"
+                data-title="작업물 05"
+                data-tags="편집,모션그래픽"
+              >
+                <div class="thumb">
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags">
+                    <span>편집</span><span>모션그래픽</span>
+                  </div>
+                  <span class="card-num">05</span>
+                </div>
+              </div>
+            </div> -->
+            <div class="mixed-right">
+              <div
+                class="card portrait"
+                data-yt="YQgYNouMHT8"
+                data-title="제55회 수원화성문화제 홍보용 릴스"
+                data-tags="편집, 삽화"
+              >
+                <div class="thumb">
+                  <img src="img/00-vertical-jinchan.png" />
+                  <div class="play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </div>
+                </div>
+                <div class="card-meta">
+                  <div class="card-tags">
+                    <span>편집</span><span>삽화</span>
+                  </div>
+                  <span class="card-num">06</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 순수 가로카드 2열 -->
+          <!-- <div class="landscape-grid">
+            <div
+              class="card landscape"
+              data-yt="dQw4w9WgXcQ"
+              data-title="작업물 07"
+              data-tags="기획,편집"
+            >
+              <div class="thumb">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+              <div class="card-meta">
+                <div class="card-tags"><span>기획</span><span>편집</span></div>
+                <span class="card-num">07</span>
+              </div>
+            </div>
+            <div
+              class="card landscape"
+              data-yt="dQw4w9WgXcQ"
+              data-title="작업물 08"
+              data-tags="모션그래픽"
+            >
+              <div class="thumb">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+              <div class="card-meta">
+                <div class="card-tags"><span>모션그래픽</span></div>
+                <span class="card-num">08</span>
+              </div>
+            </div>
+            <div
+              class="card landscape"
+              data-yt="dQw4w9WgXcQ"
+              data-title="작업물 09"
+              data-tags="촬영,편집"
+            >
+              <div class="thumb">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+              <div class="card-meta">
+                <div class="card-tags"><span>촬영</span><span>편집</span></div>
+                <span class="card-num">09</span>
+              </div>
+            </div>
+            <div
+              class="card landscape"
+              data-yt="dQw4w9WgXcQ"
+              data-title="작업물 10"
+              data-tags="편집"
+            >
+              <div class="thumb">
+                <div class="play-btn">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+              <div class="card-meta">
+                <div class="card-tags"><span>편집</span></div>
+                <span class="card-num">10</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- /content -->
+      </main>
+    </div>
+
+    <!-- 모달 -->
+    <div class="backdrop" id="modal" role="dialog" aria-modal="true">
+      <div class="modal">
+        <div class="modal-bar">
+          <span class="modal-label" id="modalTitle">—</span>
+          <button class="modal-x" id="modalClose" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal-video">
+          <iframe
+            id="ytFrame"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* ── 모달 ── */
+      const modal = document.getElementById("modal");
+      const ytFrame = document.getElementById("ytFrame");
+      const modalTitle = document.getElementById("modalTitle");
+
+      function openModal(ytId, title) {
+        ytFrame.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0`;
+        modalTitle.textContent = title;
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal() {
+        ytFrame.src = "";
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document
+        .getElementById("modalClose")
+        .addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      document.getElementById("content").addEventListener("click", (e) => {
+        const card = e.target.closest(".card");
+        if (!card) return;
+        openModal(card.dataset.yt, card.dataset.title);
+      });
+
+      /* ── 필터 ── */
+      document.getElementById("filterList").addEventListener("click", (e) => {
+        const li = e.target.closest("li");
+        if (!li) return;
+
+        document
+          .querySelectorAll(".filter-list li")
+          .forEach((el) => el.classList.remove("active"));
+        li.classList.add("active");
+
+        const filter = li.dataset.filter;
+
+        document.querySelectorAll(".card").forEach((card) => {
+          const tags = (card.dataset.tags || "").split(",");
+          card.style.display =
+            filter === "all" || tags.includes(filter) ? "" : "none";
+        });
+
+        /* mixed-row: 두 카드 모두 숨으면 row 전체 숨김 */
+        document.querySelectorAll(".mixed-row").forEach((row) => {
+          const anyVisible = [...row.querySelectorAll(".card")].some(
+            (c) => c.style.display !== "none",
+          );
+          row.style.display = anyVisible ? "" : "none";
+        });
+      });
+    </script>
+  </body>
+</html>

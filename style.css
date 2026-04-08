@@ -1,0 +1,389 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sidebar-w: 12%;
+  --font: "Gothic A1", sans-serif;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: -3%;
+}
+
+/* ══ 레이아웃 ══ */
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── 사이드바 ── */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  height: 100vh;
+  margin: 0px 0 0 5vw;
+  padding: 2.5rem 1.6rem 2rem;
+  /* border-right: 1px solid var(--black); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sb-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sb-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.15rem;
+}
+.sb-email {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  /* word-break: break-all; */
+}
+.sb-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.sb-tagline {
+  font-size: 0.72rem;
+  margin-bottom: 2.5rem;
+}
+
+/* 필터 목록 */
+.filter-list {
+  list-style: none;
+}
+.filter-list li {
+  font-size: 1rem;
+  padding: 0.45rem 0.5rem;
+  /* border-bottom: 1px solid var(--black); */
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.15s;
+  user-select: none;
+}
+/* .filter-list li:first-child {
+  border-top: 1px solid var(--black);
+} */
+.filter-list li:hover {
+  opacity: 0.1;
+}
+.filter-list li.active {
+  opacity: 1;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.sb-footer {
+  font-size: 0.65rem;
+  opacity: 0.25;
+}
+
+/* ── 메인 ── */
+.main {
+  flex: 1;
+  overflow-y: auto;
+}
+.main::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ══ 콘텐츠 ══ */
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 5vw auto auto;
+  padding: 0 1rem;
+}
+
+/*
+  mixed-row: 세로카드(우) 1장 + 가로카드(좌) 2장
+  ─────────────────────────────────────────────
+  높이 일치 방법:
+  - .mixed-row 전체를 display:grid, grid-template-columns: 1fr 1fr
+  - .mixed-right(세로카드)가 행 높이를 결정 → aspect-ratio: 9/16
+  - .mixed-left는 height:100% flex-column, 각 가로카드 flex:1
+    → 가로카드 thumb도 flex:1 으로 남은 공간 채움
+  - 이렇게 하면 meta 줄 높이를 자동 흡수해서 정확히 반반
+*/
+.mixed-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+  gap: 12px; /* 간격 추가 */
+}
+
+.mixed-left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mixed-left .card {
+  flex: 1; /* 두 카드가 세로 절반씩 */
+  min-height: 0;
+}
+
+/* .mixed-left .card + .card {
+  border-top: 1px solid var(--black);
+} */
+
+/* 가로카드의 thumb를 flex로 채워서 meta 높이 흡수 */
+.mixed-left .card .thumb {
+  flex: 1;
+  aspect-ratio: unset !important; /* mixed-row 안에서만 flex로 대체 */
+}
+
+.mixed-right .card {
+  height: 100%;
+}
+
+/* landscape-grid: 순수 가로카드 2열 — 여기선 고정 비율 사용 */
+.landscape-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 → 3 */
+  gap: 12px; /* 간격 추가 */
+}
+
+/* ══ 카드 공통 ══ */
+.card {
+  cursor: pointer;
+  background: var(--white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.18s;
+}
+
+.card:hover {
+  background: var(--black);
+}
+.card:hover .card-meta {
+  color: var(--white);
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+.card:hover .play-btn svg {
+  fill: var(--white);
+}
+.card:hover .card-num {
+  opacity: 0.4;
+}
+
+/* landscape-grid 카드 border */
+.landscape-grid .card {
+  border: none;
+}
+.landscape-grid .card:nth-child(2n) {
+  border-right: none;
+}
+
+/* 썸네일 */
+.thumb {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: repeating-conic-gradient(#e8e8e8 0% 25%, #f4f4f4 0% 50%) 0 0 /
+    20px 20px;
+}
+
+/* landscape-grid 안에서만 고정 비율 적용 */
+.landscape-grid .card.landscape .thumb {
+  aspect-ratio: 16 / 9;
+}
+
+/* portrait thumb는 항상 비율 고정 (세로카드 = 행 높이 결정자) */
+.card.portrait .thumb {
+  aspect-ratio: 9 / 16;
+}
+
+.thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 재생 버튼 */
+.play-btn {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+.card:hover .play-btn {
+  opacity: 1;
+}
+.play-btn svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--black);
+  transition: fill 0.18s;
+}
+
+/* 카드 메타 */
+.card-meta {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  transition:
+    color 0.18s,
+    border-top-color 0.18s;
+}
+.card-tags {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.card-tags span {
+  font-size: 1rem;
+}
+.card-num {
+  font-size: 0.65rem;
+  opacity: 0.2;
+  flex-shrink: 0;
+  transition: opacity 0.18s;
+}
+
+/* ══ 모달 ══ */
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.88);
+  align-items: center;
+  justify-content: center;
+}
+.backdrop.open {
+  display: flex;
+}
+
+.modal {
+  width: min(84vw, 980px);
+  background: var(--white);
+  border: 1px solid var(--black);
+  overflow: hidden;
+  animation: modalIn 0.2s ease;
+}
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--black);
+}
+.modal-label {
+  font-size: 0.7rem;
+}
+.modal-x {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: var(--black);
+  transition: opacity 0.15s;
+}
+.modal-x:hover {
+  opacity: 0.4;
+}
+
+.modal-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--black);
+}
+.modal-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ══ 반응형 ══ */
+@media (max-width: 680px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 2rem 1.5rem 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid var(--black);
+  }
+  .main {
+    overflow: visible;
+  }
+  .mixed-row {
+    grid-template-columns: 1fr;
+  }
+  .mixed-left {
+    height: auto;
+  }
+  .mixed-left .card {
+    flex: none;
+  }
+  .mixed-left .card .thumb {
+    aspect-ratio: 16/9 !important;
+  }
+  .card.portrait .thumb {
+    aspect-ratio: 16/9;
+  }
+  .landscape-grid {
+    grid-template-columns: 1fr;
+  }
+  .landscape-grid .card {
+    border-right: none;
+  }
+  .modal {
+    width: 98vw;
+  }
+}
