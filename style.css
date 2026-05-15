@@ -189,7 +189,7 @@ body {
   fill: var(--white);
 }
 .card:hover .card-num {
-  opacity: 0;
+  opacity: 100;
 }
 
 /* landscape-grid 카드 border */
@@ -273,8 +273,8 @@ body {
   font-weight: 200;
 }
 .card-num {
-  font-size: 0.8rem;
-  opacity: 0.4;
+  font-size: 0.9rem;
+  /* opacity: 0.4; */
   flex-shrink: 0;
   transition: opacity 0.18s;
 }
