@@ -1,0 +1,1 @@
+import{n as e}from"./server-gPWZZCjX.js";import{t}from"./drive-ChItZHuF.js";var n=`edge`;async function r(){let n=await t();return n?e.redirect(n):new e(`보관함이 아직 연결되지 않았습니다.`,{status:404})}export{r as GET,n as runtime};
